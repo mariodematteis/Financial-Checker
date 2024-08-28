@@ -3,10 +3,10 @@ FROM continuumio/miniconda3:latest
 ARG ENV_FILE="environment.yml"
 ARG ENV_NAME="FinancialChecker"
 
-ADD ${ENV_FILE} /tmp/environment.yml
-RUN conda env create -f /tmp/environment.yml
-
 COPY .. /app
-WORKDIR /app/src/FinancialChecker/app
+WORKDIR /app
+RUN conda env create -f environment.yml
 
-CMD ["conda", "run", "-n", "FinancialChecker", "&&", "streamlit", "run", "main.py"]
+EXPOSE 8501
+
+CMD ["conda", "run", "-n", "FinancialChecker", "streamlit", "run", "./src/financialchecker/app/main.py"]
