@@ -1,0 +1,11 @@
+name: FinancialChecker
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python>=3.11,<3.12
+  - ipykernel
+  - ipython
+  - pip
+  - pip:
+    - -e .[dev]

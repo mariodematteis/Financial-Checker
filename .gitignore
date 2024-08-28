@@ -1,0 +1,15 @@
+*.egg-info
+*.pages
+*.dtmp
+*.bkp
+*.log
+*.PNG
+
+.DS_Store
+.env
+.vscode
+__pycache__
+
+compose.yaml
+config.yaml
+.dockerignore
